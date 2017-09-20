@@ -1,0 +1,32 @@
+spring:
+ application:
+   name: Hello World Service
+message: Default Profile Active!
+endpoints:
+ enabled: true
+ sensitive: false
+logging:
+ level:
+   root: INFO
+---
+spring:
+ profiles: dev
+message: Dev Environment Profile Active!
+---
+spring:
+ profiles: test
+message: Test Environment Profile Active!
+---
+spring:
+ profiles: prod
+message: Production Environment Profile Active!
+endpoints:
+ enabled: false
+ health:
+   enabled: true
+ info:
+   enabled: true
+ sensitive: true
+logging:
+ level:
+   root: WARN
