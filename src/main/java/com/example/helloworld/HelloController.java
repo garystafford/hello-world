@@ -41,4 +41,13 @@ public class HelloController {
         }
         return ResponseEntity.status(HttpStatus.OK).body(sampleResponses);
     }
+
+    @RequestMapping("/oops")
+    public ResponseEntity<SampleResponse> getError() {
+        SampleResponse sample = new SampleResponse();
+        if (sample != null) {
+            throw new RuntimeException();
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(sample);
+    }
 }

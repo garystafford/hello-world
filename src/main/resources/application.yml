@@ -7,7 +7,7 @@ endpoints:
  sensitive: false
 logging:
  level:
-   root: INFO
+   root: DEBUG
 ---
 spring:
  profiles: dev
