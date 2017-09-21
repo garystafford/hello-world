@@ -12,10 +12,16 @@ logging:
 spring:
  profiles: dev
 message: Dev Environment Profile Active!
+logging:
+ level:
+   root: DEBUG
 ---
 spring:
  profiles: test
 message: Test Environment Profile Active!
+logging:
+ level:
+   root: DEBUG
 ---
 spring:
  profiles: prod
