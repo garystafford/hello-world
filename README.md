@@ -10,3 +10,26 @@ In addition to all the Spring Actuator endpoints, such as `health`, `info`, `met
 2. `/sample` - Returns a single serialized JSON object containing several sample data fields
 3. `/sample/{count}` - Returns multiple serialized JSON objects
 4. `/oops` - Intentionally throws and returns a Java runtime exception stack trace
+
+## Building Locally
+
+The service can be build locally using the following command: `./gradlew clean build`.
+
+## Docker Image
+
+A copy of this service is available on Docker Hub: `garystafford/hello-logging:latest`.
+
+## Running the Docker Image
+
+The Docker Image can be run using the following Docker Compose service configuration:
+
+```yaml
+hello-world:
+  image: garystafford/hello-logging:latest
+  ports:
+  - "8080:8080/tcp" # optional
+  command: "java \
+    -Dspring.profiles.active=${DEPLOY_ENV} \
+    -Djava.security.egd=file:/dev/./urandom \
+    -jar hello-world.jar"
+```
