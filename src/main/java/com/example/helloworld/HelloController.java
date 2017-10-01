@@ -23,18 +23,21 @@ public class HelloController {
         this.environment = environment;
     }
 
+    @LogExecutionTime
     @RequestMapping("/")
     public String getMessage() {
         String message = environment.getProperty("message");
         return String.format("Message: %s", message);
     }
 
+    @LogExecutionTime
     @RequestMapping("/sample")
     public ResponseEntity<SampleResponse> getSample() {
         SampleResponse sample = new SampleResponse();
         return ResponseEntity.status(HttpStatus.OK).body(sample);
     }
 
+    @LogExecutionTime
     @RequestMapping("/sample/{count}")
     public ResponseEntity<List<SampleResponse>> getSamples(@PathVariable("count") int sampleCount) {
         List<SampleResponse> sampleResponses = new ArrayList<>();
@@ -44,6 +47,7 @@ public class HelloController {
         return ResponseEntity.status(HttpStatus.OK).body(sampleResponses);
     }
 
+    @LogExecutionTime
     @RequestMapping("/oops")
     public ResponseEntity<SampleResponse> getError() {
         SampleResponse sample = new SampleResponse();
