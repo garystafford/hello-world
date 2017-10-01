@@ -11,6 +11,9 @@ In addition to all the Spring Actuator endpoints, such as `health`, `info`, `met
 3. `/sample/{count}` - Returns multiple serialized JSON objects
 4. `/oops` - Intentionally throws and returns a Java runtime exception stack trace
 
+It also has the following `HTTP POST` endpoint:
+5. `/logger` - Logs `logEntry` value to INFO log output (`http http://localhost:8080/logger logEntry="This is a test"`)
+
 ## Building Locally
 
 The service can be build locally using the following command: `./gradlew clean build`.
