@@ -1,18 +1,20 @@
 package com.example.helloworld;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
 
 @RestController
 public class HelloController {
+
+    private static final Logger logger = LoggerFactory.getLogger(HelloController.class);
 
     private Environment environment;
 
@@ -49,5 +51,10 @@ public class HelloController {
             throw new RuntimeException();
         }
         return ResponseEntity.status(HttpStatus.OK).body(sample);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/logger")
+    public void postLog(@RequestBody String logEntry) {
+        logger.info(logEntry);
     }
 }
