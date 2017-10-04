@@ -1,12 +1,9 @@
 buildscript {
-	ext {
-		springBootVersion = '1.5.4.RELEASE'
-	}
 	repositories {
 		mavenCentral()
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.7.RELEASE")
 	}
 }
 
@@ -25,10 +22,6 @@ jar {
 	version = '0.1.0'
 }
 
-ext {
-	springCloudVersion = 'Dalston.SR2'
-}
-
 dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-hateoas'
@@ -40,7 +33,7 @@ dependencies {
 
 dependencyManagement {
 	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-		mavenBom 'org.springframework.cloud:spring-cloud-config:1.3.1.RELEASE'
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.SR4"
+		mavenBom 'org.springframework.cloud:spring-cloud-config:1.3.3.RELEASE'
 	}
 }
