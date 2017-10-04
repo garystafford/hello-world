@@ -3,6 +3,7 @@ FROM openjdk:8
 LABEL MAINTAINER "Gary A. Stafford <garystafford@rochester.rr.com>"
 ENV REFRESHED_AT 2017-10-04
 
+VOLUME /tmp
 EXPOSE 8080
 
 RUN set -ex \
@@ -13,6 +14,7 @@ RUN set -ex \
   && git clone --depth 1 --branch artifacts \
       "https://github.com/garystafford/hello-world.git" /hello \
   && cd /hello \
-  && mv hello-world-*.jar hello-world.jar
+  && mv hello-world-*.jar hello-world.jar \
+  && ls -al
 
-CMD [ "java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "hello-world.jar" ]
+CMD [ "java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "hellow/hello-world.jar" ]
