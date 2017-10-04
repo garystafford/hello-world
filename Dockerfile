@@ -17,4 +17,4 @@ RUN set -ex \
   && mv hello-world-*.jar hello-world.jar \
   && ls -al
 
-CMD [ "java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "hellow/hello-world.jar" ]
+CMD [ "java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "hello/hello-world.jar" ]
