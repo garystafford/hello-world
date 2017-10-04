@@ -1,10 +1,19 @@
 FROM openjdk:8
 
 LABEL MAINTAINER "Gary A. Stafford <garystafford@rochester.rr.com>"
-ENV REFRESHED_AT 2017-09-13
+ENV REFRESHED_AT 2017-10-04
 
-RUN apt-get update -y && apt-get upgrade -y
-VOLUME /tmp
+WORKDIR /tmp
 EXPOSE 8080
-COPY build/libs/hello-world-0.1.0.jar hello-world.jar
+
+RUN set -ex \
+  && apt-get update -y \
+  && apt-get upgrade -y \
+  && apt-get install git \
+  && mkdir /hello \
+  && git clone --depth 1 --branch artifacts \
+      "https://github.com/garystafford/hello-world.git" /hello \
+  && cd /hello \
+  && mv hello-world-*.jar hello-world.jar
+
 CMD [ "java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "hello-world.jar" ]
