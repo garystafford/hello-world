@@ -3,7 +3,6 @@ FROM openjdk:8
 LABEL MAINTAINER "Gary A. Stafford <garystafford@rochester.rr.com>"
 ENV REFRESHED_AT 2017-10-04
 
-WORKDIR /tmp
 EXPOSE 8080
 
 RUN set -ex \
