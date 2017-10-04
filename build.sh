@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# disconect from Docker dameon
+# disconnect from Docker daemon
 unset DOCKER_TLS_VERIFY DOCKER_CERT_PATH DOCKER_HOST
 
 # build
