@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/garystafford/hello-world.svg?branch=master)](https://travis-ci.org/garystafford/hello-world)  
+  
+[![Docker Status](https://dockerbuildbadges.quelltext.eu/status.svg?organization=garystafford&repository=hello-world)](https://github.com/garystafford/cd-maturity-model/tree/requirejs)
+
 # Hello-World Spring Boot Docker Image
 
 Simple Spring Boot Hello-World application for article and demo on Docker logging to ELK on AWS.
