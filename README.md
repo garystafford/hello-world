@@ -16,6 +16,14 @@ It also has the following `HTTP POST` endpoint:
 HTTPie: `http http://localhost:8080/logger logEntry="This is a test"`  
 cURL: `curl -d '{"logEntry":"This is a test"}' -H "Content-Type: application/json" -X POST http://localhost:8080/logger`
 
+## Logging with Spring’s Aspect-Oriented Programming (AOP)
+All HelloController method calls produce an INFO level log entry containing approximate execution time, similar to the below examples.
+
+```text
+2017-10-04 20:14:02.388  INFO 29463 --- [nio-8080-exec-5] com.example.helloworld.HelloController   : Execution Time: ResponseEntity com.example.helloworld.HelloController.getSample() executed in 23 ms
+
+2017-10-04 20:13:59.034  INFO 29463 --- [nio-8080-exec-3] com.example.helloworld.HelloController   : Execution Time: ResponseEntity com.example.helloworld.HelloController.getSamples(int) executed in 38 ms
+```
 ## Building Locally
 
 The service can be build locally using the following command: `./gradlew clean build`.
