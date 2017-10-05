@@ -57,6 +57,7 @@ public class HelloController {
         return ResponseEntity.status(HttpStatus.OK).body(sample);
     }
 
+    @LogExecutionTime
     @RequestMapping(method = RequestMethod.POST, value = "/logger")
     public void postLog(@RequestBody String logEntry) {
         logger.info(logEntry);
