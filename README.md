@@ -13,7 +13,7 @@ In addition to all the Spring Actuator endpoints, such as `health`, `info`, `met
 3. `/sample/{count}` - Returns multiple serialized JSON objects (large response object)
 4. `/oops` - Intentionally throws and returns a Java runtime exception stack trace (multiline log entry)
 
-It also has the following `HTTP POST` endpoint:
+It also has the following `HTTP POST` endpoint:  
 5. `/logger` - Logs `logEntry` value to INFO log output  
 HTTPie: `http http://localhost:8080/logger logEntry="This is a test"`  
 cURL: `curl -d '{"logEntry":"This is a test"}' -H "Content-Type: application/json" -X POST http://localhost:8080/logger`
