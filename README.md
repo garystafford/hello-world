@@ -34,7 +34,7 @@ The service can be build locally using the following command: `./gradlew clean b
 
 ## Docker Image
 
-A copy of this service is available on Docker Hub: `garystafford/hello-logging:latest`.
+A copy of this service is available on Docker Hub: `garystafford/hello-world:latest`.
 
 ## Running the Docker Image
 
