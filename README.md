@@ -42,7 +42,7 @@ The Docker Image can be run using the following Docker Compose service configura
 
 ```yaml
 hello-world:
-  image: garystafford/hello-logging:latest
+  image: garystafford/hello-world:latest
   ports:
   - "8080:8080/tcp" # optional
   command: "java \
