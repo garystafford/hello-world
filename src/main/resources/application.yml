@@ -1,7 +1,7 @@
 spring:
  application:
    name: Hello World Service
-message: Default Profile Active!
+message: The 'default' Profile Active
 endpoints:
  enabled: true
  sensitive: false
@@ -11,21 +11,21 @@ logging:
 ---
 spring:
  profiles: dev
-message: Dev Environment Profile Active!
+message: The 'dev' Environment Profile Active
 logging:
  level:
    root: DEBUG
 ---
 spring:
  profiles: test
-message: Test Environment Profile Active!
+message: The 'test' Environment Profile Active
 logging:
  level:
    root: DEBUG
 ---
 spring:
  profiles: prod
-message: Production Environment Profile Active!
+message: The 'prod' Environment Profile Active
 endpoints:
  enabled: false
  health:

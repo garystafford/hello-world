@@ -1,7 +1,7 @@
 FROM openjdk:8
 
 LABEL MAINTAINER "Gary A. Stafford <garystafford@rochester.rr.com>"
-ENV REFRESHED_AT 2017-10-04
+ENV REFRESHED_AT 2018-03-09
 
 VOLUME /tmp
 EXPOSE 8080
