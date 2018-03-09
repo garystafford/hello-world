@@ -6,9 +6,9 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 
 @SpringBootApplication
 @RefreshScope
-public class HelloworldApplication {
+public class HelloWorldApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(HelloworldApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(HelloWorldApplication.class, args);
+    }
 }
