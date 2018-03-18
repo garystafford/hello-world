@@ -11,13 +11,13 @@ In addition to all the Spring Actuator endpoints, such as `health`, `info`, `met
 * `/` - Returns basic text message
 * `/sample` - Returns a single serialized JSON object containing several sample data fields
 * `/sample/{count}` - Returns multiple serialized JSON objects (large response object)
-* `/oops` - Intentionally throws and returns a Java runtime exception stack trace (multiline log entry)
+* `/oops` - Intentionally throws an Internal Server Error (500) and returns a Java runtime exception stack trace (multiline log entry)
 
 It also has the following `HTTP POST` endpoint:  
 * `/logger` - Logs `logEntry` value to INFO log output
 
 HTTPie: `http http://localhost:8080/logger logEntry="This is a test"`
-  
+
 cURL: `curl -d '{"logEntry":"This is a test"}' -H "Content-Type: application/json" -X POST http://localhost:8080/logger`
 
 ## Logging with Spring’s Aspect-Oriented Programming (AOP)
@@ -49,4 +49,11 @@ hello-world:
     -Dspring.profiles.active=development \
     -Djava.security.egd=file:/dev/./urandom \
     -jar hello-world.jar"
+```
+
+## Running with Pivotal Could Formation (pivotal.io)
+
+```bash
+# https://github.com/cloudfoundry/java-buildpack/blob/master/docs/example-spring_boot_cli.md
+cf push -p build/libs/hello-world-0.1.0.jar
 ```
