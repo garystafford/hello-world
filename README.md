@@ -46,7 +46,7 @@ hello-world:
   ports:
   - "8080:8080/tcp" # optional
   command: "java \
-    -Dspring.profiles.active=development \
+    -Dspring.profiles.active=dev \
     -Djava.security.egd=file:/dev/./urandom \
     -jar hello-world.jar"
 ```

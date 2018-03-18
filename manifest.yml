@@ -4,3 +4,7 @@ applications:
   memory: 1GB
   instances: 1
   random-route: true
+  buildpack: java_buildpack
+  path: build/libs/hello-world-0.1.0.jar
+  env:
+    SPRING_PROFILES_ACTIVE: dev
