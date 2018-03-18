@@ -55,5 +55,6 @@ hello-world:
 
 ```bash
 # https://github.com/cloudfoundry/java-buildpack/blob/master/docs/example-spring_boot_cli.md
-cf push -p build/libs/hello-world-0.1.0.jar
+gradlew build
+cf push
 ```
