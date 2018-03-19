@@ -2,15 +2,15 @@
 
 # Hello-World Spring Boot Docker Image
 
-Simple Spring Boot Hello-World application for general DevOps testing: CI/CD, containers, PaaS platforms, and so forth.
+A simple Spring Boot Hello-World application for general DevOps testing: CI/CD, deployment, containers, PaaS, and so forth.
 
 ## Endpoints
 
-In addition to all the Spring Actuator endpoints, such as `health`, `info`, `metrics`, `env`, and `configprops`, this service has the following `HTTP GET` endpoints:
+In addition to all the Spring Actuator endpoints, such as `mappings`, `health`, `info`, `metrics`, `env`, and `configprops`, this service has the following `HTTP GET` endpoints:
 
-* `/` - Returns basic text message with Active Spring Profile
+* `/` - Returns basic text message indicating the Active Spring Profile
 * `/sample` - Returns a single serialized JSON object containing several sample data fields
-* `/sample/{count}` - Returns multiple serialized JSON objects (large response object)
+* `/sample/{count}` - Returns multiple serialized JSON objects (test large response object)
 * `/oops` - Intentionally throws an Internal Server Error (500) and returns a Java runtime exception stack trace (multiline log entry)
 
 It also has the following `HTTP POST` endpoint:  
@@ -53,7 +53,8 @@ hello-world:
 
 ## Running with Pivotal Could Formation (pivotal.io)
 
+PCF Application configuration in the `manifest.yml` file.
+
 ```bash
-# https://github.com/cloudfoundry/java-buildpack/blob/master/docs/example-spring_boot_cli.md
-gradlew build && cf push
+./gradlew build && cf push
 ```
