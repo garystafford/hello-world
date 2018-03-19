@@ -34,7 +34,6 @@ public class HelloController {
     @RequestMapping("/sample")
     public ResponseEntity<SampleResponse> getSample() {
         SampleResponse sample = new SampleResponse();
-        sample.
         return ResponseEntity.status(HttpStatus.OK).body(sample);
     }
 
