@@ -2,6 +2,7 @@ package com.example.helloworld;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.apache.commons.math3.random.RandomDataGenerator;
 
 import java.sql.Timestamp;
 import java.util.UUID;
@@ -15,11 +16,13 @@ public class SampleResponse {
     private String uniqueId;
     private String shortDescription;
     private String longText;
+    private double randomDouble;
 
     SampleResponse() {
         this.id = generateRandomInteger();
         this.timestamp = getTimestamp();
         this.uniqueId = generateUUID();
+        this.randomDouble = generatedDouble();
         this.shortDescription = generateShortString();
         this.longText = generateLongString();
     }
@@ -28,6 +31,7 @@ public class SampleResponse {
         this.id = generateRandomInteger();
         this.timestamp = getTimestamp();
         this.uniqueId = generateUUID();
+        this.randomDouble = generatedDouble();
         this.shortDescription = shortDescription;
         this.longText = longText;
     }
@@ -42,6 +46,11 @@ public class SampleResponse {
 
     private String getTimestamp() {
         return new Timestamp(System.currentTimeMillis()).toString();
+    }
+
+    private double generatedDouble() {
+        double generatedDouble = new RandomDataGenerator().getRandomGenerator().nextDouble();
+        return generatedDouble;
     }
 
     private String generateShortString() {

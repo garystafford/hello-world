@@ -2,13 +2,13 @@
 
 # Hello-World Spring Boot Docker Image
 
-Simple Spring Boot Hello-World application for article and demo on Docker logging to ELK on AWS.
+Simple Spring Boot Hello-World application for general DevOps testing: CI/CD, containers, PaaS platforms, and so forth.
 
 ## Endpoints
 
 In addition to all the Spring Actuator endpoints, such as `health`, `info`, `metrics`, `env`, and `configprops`, this service has the following `HTTP GET` endpoints:
 
-* `/` - Returns basic text message
+* `/` - Returns basic text message with Active Spring Profile
 * `/sample` - Returns a single serialized JSON object containing several sample data fields
 * `/sample/{count}` - Returns multiple serialized JSON objects (large response object)
 * `/oops` - Intentionally throws an Internal Server Error (500) and returns a Java runtime exception stack trace (multiline log entry)
@@ -55,6 +55,5 @@ hello-world:
 
 ```bash
 # https://github.com/cloudfoundry/java-buildpack/blob/master/docs/example-spring_boot_cli.md
-gradlew build
-cf push
+gradlew build && cf push
 ```
