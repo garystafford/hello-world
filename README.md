@@ -51,7 +51,7 @@ hello-world:
     -jar hello-world.jar"
 ```
 
-## Running with Pivotal Could Formation (pivotal.io)
+## Running with Pivotal Cloud Foundry (pivotal.io)
 
 PCF Application configuration in the `manifest.yml` file.
 
